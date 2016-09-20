@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="en" ng-app="store">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Demo</title>
+    <script src="../Scripts/angular.js"></script>
+</head>
+<body>
+    <div ng-controller="MyController as mc">
+        <h1>{{mc.user.name}}</h1>
+        <p>{{ mc.user.title + ', ' + mc.user.company }}</p>
+        <ul>
+            <li ng-repeat="user in mc.user.users">{{user}}</li>
+        </ul>
+        <form ng-submit="mc.abc()">
+            <input type="text" placeholder="Enter User Name." ng-model="mc.UserName"/>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+<script>
+    (function () {
+        var app = angular.module('store', []);
+
+        app.controller('MyController', function() {
+            this.user = author;
+            this.UserName = 'New User';
+
+            this.AddNewUser = function () {
+                this.user.users.push(this.UserName);
+            };
+
+            this.abc = AddUser;
+        });
+
+    })();
+    var author = {
+        'name': 'Babu Reddy',
+        'title': 'Staff Author',
+        'company': 'Lynda.com',
+        'users': ['Tanuja', 'Reshma', 'Soundarya']
+    }
+    var AddUser = function () {
+        author.users.push(this.UserName);
+    };
+
+</script>
+</body>
+</html>

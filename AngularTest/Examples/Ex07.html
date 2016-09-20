@@ -1,0 +1,29 @@
+﻿<!-- Using ng-repeat. Extension to previous example. Adding new values into the array.-->
+<html ng-app="nameApp">
+<head>
+    <meta charset="utf-8">
+    <title>Angular.js Example</title>
+    <script src="../Scripts/angular.min.js"></script>
+    <script>
+      var nameApp = angular.module('nameApp', []);
+      nameApp.controller('NameCtrl', function($scope) {
+          $scope.names = ['Tanuja', 'Reshma', 'Soundarya'];
+          $scope.AddNewUser = function() {
+              $scope.names.push($scope.newUser);
+              $scope.newUser = '';
+          };
+      });
+    </script>
+</head>
+<body ng-controller="NameCtrl">
+<ul>
+    <li ng-repeat="name in names">
+        {{name}}
+    </li>
+</ul>
+<form ng-submit="AddNewUser()">
+    <input type="text" placeholder="Enter new user" ng-model="newUser"/>
+    <button type="submit">Add User</button>
+</form>
+</body>
+</html>

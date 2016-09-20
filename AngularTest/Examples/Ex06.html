@@ -1,0 +1,20 @@
+﻿<!-- Using ng-repeat. Works similar to foreach loop. Pass an array and get the work done. -->
+<html ng-app="nameApp">
+<head>
+    <meta charset="utf-8">
+    <title>Angular.js Example</title>
+    <script src="../Scripts/angular.min.js"></script>
+    <script>
+      var nameApp = angular.module('nameApp', []);
+      nameApp.controller('NameCtrl', function ($scope){
+        $scope.names = ['Tanuja', 'Reshma', 'Soundarya'];
+      });
+    </script>
+</head>
+<body ng-controller="NameCtrl">
+    <ul>
+        <li ng-repeat="name in names">
+            <h2>{{name}}</h2></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<html lang="en" ng-app="store">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Demo</title>
+
+    <script src="../Scripts/angular.js"></script>
+</head>
+<body>
+<div ng-controller="MyController as mc">
+    <h1>{{mc.user.name}}</h1>
+    <p>{{ mc.user.title + ', ' + mc.user.company }}</p>
+</div>
+
+<script>
+    (function() {
+        var app = angular.module('store', []);
+
+        app.controller('MyController', function() {
+            this.user = author;
+        });
+
+    })();
+    var author = {
+        'name': 'Babu Reddy',
+        'title': 'Author',
+        'company': 'iGnani.com'
+    }
+</script>
+</body>
+</html>

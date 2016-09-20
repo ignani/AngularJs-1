@@ -1,0 +1,30 @@
+﻿<!--Initializing the model using an Angular controller, defined within an Angular module. Adding an object to scope-->
+<!doctype html>
+<html lang="en" ng-app="store">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Demo</title>
+    <script src="Scripts/angular.js"></script>
+</head>
+<body>
+    <div ng-controller="MyController">
+        <h1>{{user.name}}</h1>
+        <p>{{ user.title + ', ' + user.company }}</p>
+    </div>
+    <script>
+    (function () {
+        var app = angular.module('store', []);
+
+        app.controller('MyController', function ($scope) {
+            $scope.user = author;
+        });
+
+    })();
+        var author = {
+            'name': 'Babu Reddy',
+            'title': 'Author',
+            'company': 'iGnani.com'
+    }
+    </script>
+</body>
+</html>
